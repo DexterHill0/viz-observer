@@ -16,7 +16,10 @@ interface VisualObserverElement {
 
 const floor = Math.floor;
 
-const root = document.documentElement;
+let root: HTMLElement;
+if (typeof window != "undefined") {
+  root = document.documentElement;
+}
 
 /**
  * Create an observer that notifies when an element is resized, moved, or added/removed from the DOM.
